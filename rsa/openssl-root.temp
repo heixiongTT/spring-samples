@@ -1,0 +1,22 @@
+[ req ]
+default_md              = sha256
+default_keyfile         = ca-key.pem
+distinguished_name      = req_distinguished_name
+prompt = no
+req_extensions  = v3_req
+x509_extensions = usr_cert
+[ req_distinguished_name ]
+C=US
+ST=North Carolina
+L=Raleigh
+O=OOOO
+CN=CCCCNNNN
+[ usr_cert ]
+basicConstraints=critical,CA:true
+keyUsage=critical, Digital Signature, Key Encipherment, Certificate Sign, CRL Sign
+extendedKeyUsage=TLS Web Client Authentication, TLS Web Server Authentication
+subjectKeyIdentifier=hash
+[ v3_req ]
+basicConstraints=critical,CA:true
+keyUsage=critical, digitalSignature
+subjectKeyIdentifier=hash

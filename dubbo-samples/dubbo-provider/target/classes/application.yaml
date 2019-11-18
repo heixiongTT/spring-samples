@@ -1,0 +1,8 @@
+dubbo:
+  application:
+    name: hello-provider
+  registry:
+    address: N/A
+  protocol:
+    port: 20884
+    name: dubbo
