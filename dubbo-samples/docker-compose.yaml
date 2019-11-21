@@ -1,0 +1,26 @@
+version: '2'
+
+networks:
+  dubbo-samples:
+
+services:
+
+  hello-service-provider:
+    container_name: hello-service-provider
+    image: hello-provider:latest
+    command: java -jar app.jar
+    ports:
+      - 20884:20884
+    networks:
+      - dubbo-samples
+
+  hello-consumer:
+    container_name: hello-consumer
+    image: hello-consumer:latest
+    command: java -jar app.jar
+    ports:
+      - 8081:8081
+    depends_on:
+      - hello-service-provider
+    networks:
+      - dubbo-samples

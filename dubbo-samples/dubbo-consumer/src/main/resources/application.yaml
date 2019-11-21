@@ -5,3 +5,6 @@ dubbo:
     address: N/A
   application:
     name: hello-consumer
+
+consumer:
+  hello-service-url: dubbo://hello-provider:20884

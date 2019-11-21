@@ -7,7 +7,7 @@ import tt.heixiongtt.dubbo.dto.service.HelloService;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    @Reference(interfaceClass = HelloService.class, url = "dubbo://localhost:20884")
+    @Reference(interfaceClass = HelloService.class, url = "${consumer.hello-service-url}")
     private HelloService helloService;
 
     @Override
